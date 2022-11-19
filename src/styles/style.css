@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  li {
+    @apply p-4;
+  }
+}
+
+body {
+  @apply bg-[#1A2332];
+}
