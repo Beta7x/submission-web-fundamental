@@ -6,7 +6,8 @@ const main = () => {
     const searchElement = document.querySelector('search-bar');
     const foodListElement = document.querySelector('food-list');
   
-    const onButtonSearchClicked = async () => {
+    const onButtonSearchClicked = async (event) => {
+      event.preventDefault();
       try {
         const result2 = await Source.searchFood2(searchElement.value);
         renderResult(result2);

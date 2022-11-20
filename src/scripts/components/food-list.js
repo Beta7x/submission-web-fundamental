@@ -16,19 +16,15 @@ class FoodList extends HTMLElement {
     }
 
     renderError(message) {
+        this.shadowDOM.adoptedStyleSheets = [sheet.target];
         this.shadowDOM.innerHTML = `
-            <style>
-                .placeholder {
-                    font-weight: lighter;
-                    color: rgba(0,0,0,0.5);
-                    -webkit-user-select: none;
-                    -moz-user-select: none;
-                    -ms-user-select: none;
-                    user-select: none;
-                }
-            </style>
+        <main class="${tw`h-screen w-full flex flex-col justify-center items-center bg-[#1A2332]`}">
+            <h1 class="${tw`text-9xl font-extrabold text-white tracking-widest`}">404</h1>
+            <div class="${tw`bg-[#9FEF00] px-2 text-sm rounded rotate-12 absolute`}">
+                ${message}
+            </div>
+        </main>
         `;
-        this.shadowDOM.innerHTML = `<h2 class="placehorlder">${message}</h2>`;
     }
 
     render() {
